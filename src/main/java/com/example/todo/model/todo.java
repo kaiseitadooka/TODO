@@ -1,9 +1,9 @@
-package com.example.message.model;
+package com.example.todo.model;
 
 import jakarta.persistence.*;
 
 @Entity
-public class Message {
+public class todo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,10 +12,10 @@ public class Message {
     private String name;
     private String text;
 
-    public Message() {
+    public todo() {
     }
 
-    public Message(String name, String text) {
+    public todo(String name, String text) {
         this.name = name;
         this.text = text;
     }

@@ -1,7 +1,7 @@
-package com.example.message.controller;
+package com.example.todo.controller;
 
-import com.example.message.service.MessageService;
-import com.example.message.model.Message;
+import com.example.todo.service.todoService;
+import com.example.todo.model.todo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-public class MessageController {
-     private final MessageService service;
+public class todoController {
+     private final todoService service;
 
-    public MessageController(MessageService service){
+    public todoController(todoService service){
         this.service =service;
     }
 
     @GetMapping("/")
     public String index(Model model){
-        List<Message> messages = service.getAllMessages();
-        model.addAttribute("messages", messages);
+        List<todo> todos = service.getAlltodos();
+        model.addAttribute("todos", todos);
         return "index";
     }
 
@@ -32,11 +32,11 @@ public class MessageController {
             model.addAttribute("error", "名前とメッセージは必須です");
 
         }else{
-            service.addMessage((name), text);
+            service.addtodo((name), text);
         }
         
-        List<Message> messages = service.getAllMessages();
-        model.addAttribute("messages", messages);
+        List<todo> todos = service.getAlltodos();
+        model.addAttribute("todos", todos);
         return "index";
     }
 }
