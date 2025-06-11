@@ -11,13 +11,15 @@ public class todo {
 
     private String name;
     private String text;
+    private boolean completed;
 
     public todo() {
     }
 
-    public todo(String name, String text) {
+    public todo(String name, String text,boolean completed) {
         this.name = name;
         this.text = text;
+        this.completed = completed;
     }
 
     public Integer getId(){
@@ -31,5 +33,22 @@ public class todo {
     public String getText(){
         return text;
     }
+
+    public boolean isCompleted() {
+    return completed;
+    }
+
+    public void setName(String name) {
+    this.name = name;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
 
 }
