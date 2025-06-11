@@ -62,7 +62,12 @@ public class todoController {
                             @RequestParam(name = "isCompleted", required = false, defaultValue = "false") boolean isCompleted,
                             Model model) {
             service.updatetodo(id, name, text, isCompleted);
-            return "redirect:/";
-                
+            return "redirect:/";   
         }
+        @GetMapping("/complete/{id}")
+        public String complete(@PathVariable Integer id) {
+        service.markCompleted(id);
+            return "redirect:/";
+        }
+
     }

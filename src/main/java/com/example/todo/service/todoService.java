@@ -39,4 +39,12 @@ public class todoService {
     public todo gettodoById(Integer id) {
         return repository.findById(id).orElse(null);
     }
+    public void markCompleted(Integer id) {
+    todo item = repository.findById(id).orElse(null);
+    if (item != null) {
+        item.setCompleted(true);
+        repository.save(item);
+    }
+}
+
 }
